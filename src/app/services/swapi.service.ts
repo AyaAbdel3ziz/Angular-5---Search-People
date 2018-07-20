@@ -5,13 +5,12 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { environment } from '../../environments/environment';
 
 const API_URL = environment.apiUrl;
+
 @Injectable()
 
 export class SwapiService {
 
-
   private inputString = new BehaviorSubject <string>('');
-
   currentString = this.inputString.asObservable();
 
 
@@ -28,6 +27,14 @@ export class SwapiService {
   /////////////////////////////     Users     //////////////////////////////////////////////////////
  //////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+  /**
+ * Summary .
+ *
+ * This Function Should return observable<users[]>
+ *
+ */
   GetAllUsers(){
     let headers= new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });

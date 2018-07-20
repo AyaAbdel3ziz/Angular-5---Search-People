@@ -17,6 +17,12 @@ export class SearchComponent implements OnInit {
   }
 
 
+  /**
+ * Summary .
+ *
+ * This Function Should Add The input String To swapiService To Pass it
+ * To User Component
+ */
   Search(){
     this.swapiService.AddData(this.userName);
   }

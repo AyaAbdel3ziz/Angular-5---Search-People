@@ -12,7 +12,7 @@
 
 
   <div [dragula]='"reorder"'>
-    <mat-accordion *ngFor="let user of users; let i of homeWorld">
+    <mat-accordion *ngFor="let user of users">
       <div class="col-lg-12">
         <mat-expansion-panel>
           <mat-expansion-panel-header>
@@ -26,19 +26,18 @@
           </mat-expansion-panel-header>
 
           <p>
-            <strong>URL :</strong> {{user.url}}
+            <strong>URL :</strong> {{ user.url }}
           </p>
 
           <p>
-            <strong>Height :</strong> {{user.height}}
+            <strong>Height :</strong> {{ user.height }}
           </p>
 
           <p>
-            <strong>HomeWorld :</strong> {{i[0]}}
+            <strong>HomeWorld :</strong> {{ user.homeworld }}
           </p>
         </mat-expansion-panel>
       </div>
-
 
 
       <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">

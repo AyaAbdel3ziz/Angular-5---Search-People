@@ -24,8 +24,13 @@ export class UsersComponent implements OnInit {
 
 
   constructor(private swapiService : SwapiService,
-    private http : HttpClient,
     private dragulaService: DragulaService) {
+      /**
+      * Summary .
+      *
+      * This is Drag and Drop Options
+      *
+      */
       dragulaService.setOptions("reorder", {
         removeOnSpill: true
       });
@@ -38,13 +43,11 @@ export class UsersComponent implements OnInit {
     this.swapiService.GetUserByName(this.userName)
     .subscribe(data => {
       this.users = data;
-      for(let prop of Object.keys(data)){
-        this.swapiService.GetHomeWorld(data[prop].homeworld).subscribe(res => {
-          this.homeWorld = res;
-          // this.homeWorld = Object.values(this.homeWorld);
-          console.log(Object.keys(this.homeWorld).map(i => this.homeWorld[i]))
-        });
-      }
+      // for(let prop of Object.keys(data)){
+      //   this.swapiService.GetHomeWorld(data[prop].homeworld).subscribe(res => {
+      //     this.homeWorld = res;
+      //   });
+      // }
       this.usersLength = this.users.length;
     });
   }
