@@ -1,0 +1,17 @@
+<div class="bg"></div>
+
+<div class="wrap">
+  <div class="search">
+    <input type="text"
+          class="form-control searchTerm"
+          [(ngModel)]="userName"
+          placeholder="Search..." />
+
+    <button type="submit"
+            class="searchButton"
+            [routerLink]="['/users']"
+            (click)="Search()">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</div>

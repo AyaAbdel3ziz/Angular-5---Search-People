@@ -1,0 +1,56 @@
+<div class="container">
+  <!-- Data Not Found -->
+  <div class="row centered" *ngIf="userName == undefined ">
+    <div class="col-md-12">
+      <img class="img img-fluid" src="assets/images/Oops.png">
+    </div>
+    <div class="col-md-12">
+      <strong> User Not found!</strong>
+    </div>
+  </div>
+  <!--  -->
+
+
+  <div [dragula]='"reorder"'>
+    <mat-accordion *ngFor="let user of users; let i of homeWorld">
+      <div class="col-lg-12">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title class="text-center">
+              <strong>
+                <fa name="user"></fa> {{user.name}}</strong>
+            </mat-panel-title>
+            <mat-panel-description>
+              <p>Click To show more data</p>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <p>
+            <strong>URL :</strong> {{user.url}}
+          </p>
+
+          <p>
+            <strong>Height :</strong> {{user.height}}
+          </p>
+
+          <p>
+            <strong>HomeWorld :</strong> {{i[0]}}
+          </p>
+        </mat-expansion-panel>
+      </div>
+
+
+
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+
+
+
+
+
+
+
+</div>

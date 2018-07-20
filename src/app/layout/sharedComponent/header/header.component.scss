@@ -1,0 +1,18 @@
+@import 'src/styles/styles';
+:host {
+    .navbar {
+        background-color: $topnav-background-color;
+        .navbar-brand {
+            color: #fff;
+        }
+        .nav-item > a {
+            color: rgb(244, 247, 250);
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+
